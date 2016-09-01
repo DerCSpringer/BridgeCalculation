@@ -14,6 +14,7 @@
 		654CB3191D777FC400F1759E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654CB3171D777FC400F1759E /* LaunchScreen.storyboard */; };
 		654CB3241D777FC400F1759E /* BridgeCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CB3231D777FC400F1759E /* BridgeCalculationTests.swift */; };
 		654CB32F1D777FC400F1759E /* BridgeCalculationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CB32E1D777FC400F1759E /* BridgeCalculationUITests.swift */; };
+		654CB33D1D779FB600F1759E /* File in Resources */ = {isa = PBXBuildFile; fileRef = 654CB33C1D779FB600F1759E /* File */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		654CB32A1D777FC400F1759E /* BridgeCalculationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridgeCalculationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		654CB32E1D777FC400F1759E /* BridgeCalculationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeCalculationUITests.swift; sourceTree = "<group>"; };
 		654CB3301D777FC400F1759E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654CB33C1D779FB600F1759E /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = File; path = BridgeCalculation/File; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		654CB3021D777FC300F1759E = {
 			isa = PBXGroup;
 			children = (
+				654CB33C1D779FB600F1759E /* File */,
 				654CB30D1D777FC400F1759E /* BridgeCalculation */,
 				654CB3221D777FC400F1759E /* BridgeCalculationTests */,
 				654CB32D1D777FC400F1759E /* BridgeCalculationUITests */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654CB33D1D779FB600F1759E /* File in Resources */,
 				654CB3191D777FC400F1759E /* LaunchScreen.storyboard in Resources */,
 				654CB3161D777FC400F1759E /* Assets.xcassets in Resources */,
 				654CB3141D777FC400F1759E /* Main.storyboard in Resources */,

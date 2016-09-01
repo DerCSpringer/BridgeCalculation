@@ -1,0 +1,2 @@
+I can't use variables that haven't been instantiated inside of variables like dictionarys
+I can do this if I declare is lazily but I haven't figured it out fully'

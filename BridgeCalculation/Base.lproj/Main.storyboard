@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BridgeCalculation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PlS-BU-klw">
+                                <rect key="frame" x="465" y="28" width="135" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="5IZ-0l-q3b"/>
+                                    <constraint firstAttribute="width" constant="135" id="S7m-8a-ClI"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="Tzd-vz-DjE"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5IZ-0l-q3b"/>
+                                    </mask>
+                                </variation>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Trump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvU-Ck-zUb">
+                                <rect key="frame" x="0.0" y="132" width="137" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="are-ff-oCE">
+                                <rect key="frame" x="465" y="132" width="135" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="Byc-ry-fKf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="QbH-E9-T5g"/>
+                                    <constraint firstAttribute="width" constant="135" id="V0z-fs-r2t"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Byc-ry-fKf"/>
+                                    </mask>
+                                </variation>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SK-sI-zcd">
+                                <rect key="frame" x="0.0" y="49" width="137" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tricks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmW-jw-m0W">
+                                <rect key="frame" x="0.0" y="229" width="137" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGT-B1-gAc">
+                                <rect key="frame" x="465" y="229" width="135" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="3xL-0Z-V0y"/>
+                                    <constraint firstAttribute="width" constant="135" id="ByR-7k-tNA"/>
+                                    <constraint firstAttribute="height" constant="89" id="e6o-Qf-hor"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="e6o-Qf-hor"/>
+                                    </mask>
+                                </variation>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="are-ff-oCE" firstAttribute="leading" secondItem="PlS-BU-klw" secondAttribute="leading" id="2c5-gu-Mbd"/>
+                            <constraint firstItem="gvU-Ck-zUb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="3fo-35-ULw"/>
+                            <constraint firstItem="are-ff-oCE" firstAttribute="top" secondItem="gvU-Ck-zUb" secondAttribute="bottom" constant="-48" id="GeE-3h-yAB"/>
+                            <constraint firstItem="are-ff-oCE" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gvU-Ck-zUb" secondAttribute="trailing" constant="328" id="JA1-YD-weh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PlS-BU-klw" secondAttribute="trailing" constant="-20" id="JHh-qk-Xbo"/>
+                            <constraint firstItem="are-ff-oCE" firstAttribute="top" secondItem="PlS-BU-klw" secondAttribute="bottom" constant="15" id="N6l-Gg-u11"/>
+                            <constraint firstItem="PlS-BU-klw" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="467" id="O5C-jh-s2C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="are-ff-oCE" secondAttribute="trailing" constant="-20" id="OOQ-nm-Hsq"/>
+                            <constraint firstItem="pGT-B1-gAc" firstAttribute="top" secondItem="KmW-jw-m0W" secondAttribute="bottom" constant="-48" id="OsA-Qf-vtU"/>
+                            <constraint firstItem="PlS-BU-klw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Rn8-wH-y79"/>
+                            <constraint firstItem="gvU-Ck-zUb" firstAttribute="top" secondItem="6SK-sI-zcd" secondAttribute="bottom" constant="39" id="hIu-4J-eYW"/>
+                            <constraint firstItem="6SK-sI-zcd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iM8-QZ-d36"/>
+                            <constraint firstItem="6SK-sI-zcd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="jWJ-Kt-3Zk"/>
+                            <constraint firstItem="PlS-BU-klw" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6SK-sI-zcd" secondAttribute="trailing" constant="328" id="znm-ws-DzM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2c5-gu-Mbd"/>
+                                <exclude reference="JA1-YD-weh"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="level" destination="PlS-BU-klw" id="f1R-84-s3E"/>
+                        <outlet property="tricks" destination="pGT-B1-gAc" id="7R0-Rf-LS3"/>
+                        <outlet property="trump" destination="are-ff-oCE" id="lSv-f0-xhl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="337"/>
         </scene>
     </scenes>
 </document>

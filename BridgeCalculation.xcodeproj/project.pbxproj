@@ -15,6 +15,10 @@
 		654CB3241D777FC400F1759E /* BridgeCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CB3231D777FC400F1759E /* BridgeCalculationTests.swift */; };
 		654CB32F1D777FC400F1759E /* BridgeCalculationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CB32E1D777FC400F1759E /* BridgeCalculationUITests.swift */; };
 		654CB33D1D779FB600F1759E /* File in Resources */ = {isa = PBXBuildFile; fileRef = 654CB33C1D779FB600F1759E /* File */; };
+		65832FA61D7E20AC005530DE /* CellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65832FA51D7E20AC005530DE /* CellTitle.swift */; };
+		65833FDA1D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65833FD91D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift */; };
+		65833FDC1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65833FDB1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift */; };
+		65F4BB8B1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F4BB8A1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		654CB32E1D777FC400F1759E /* BridgeCalculationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeCalculationUITests.swift; sourceTree = "<group>"; };
 		654CB3301D777FC400F1759E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		654CB33C1D779FB600F1759E /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = File; path = BridgeCalculation/File; sourceTree = "<group>"; };
+		65832FA51D7E20AC005530DE /* CellTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTitle.swift; sourceTree = "<group>"; };
+		65833FD91D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCalculationCollectionViewController.swift; sourceTree = "<group>"; };
+		65833FDB1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCalculationCollectionViewCell.swift; sourceTree = "<group>"; };
+		65F4BB8A1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCalculationCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,10 @@
 			children = (
 				654CB30E1D777FC400F1759E /* AppDelegate.swift */,
 				654CB3101D777FC400F1759E /* ViewController.swift */,
+				65832FA51D7E20AC005530DE /* CellTitle.swift */,
+				65F4BB8A1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift */,
+				65833FD91D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift */,
+				65833FDB1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift */,
 				654CB3121D777FC400F1759E /* Main.storyboard */,
 				654CB3151D777FC400F1759E /* Assets.xcassets */,
 				654CB3171D777FC400F1759E /* LaunchScreen.storyboard */,
@@ -262,6 +274,10 @@
 			files = (
 				654CB3111D777FC400F1759E /* ViewController.swift in Sources */,
 				654CB30F1D777FC400F1759E /* AppDelegate.swift in Sources */,
+				65F4BB8B1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift in Sources */,
+				65833FDA1D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift in Sources */,
+				65832FA61D7E20AC005530DE /* CellTitle.swift in Sources */,
+				65833FDC1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +504,7 @@
 				654CB3351D777FC400F1759E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		654CB3361D777FC400F1759E /* Build configuration list for PBXNativeTarget "BridgeCalculationTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +513,7 @@
 				654CB3381D777FC400F1759E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		654CB3391D777FC400F1759E /* Build configuration list for PBXNativeTarget "BridgeCalculationUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +522,7 @@
 				654CB33B1D777FC400F1759E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

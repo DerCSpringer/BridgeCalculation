@@ -9,5 +9,6 @@
 import UIKit
 
 class BridgeCalculationCollectionReusableView: UICollectionReusableView {
-        
+    
+    @IBOutlet weak var sectionTitle: UILabel!
 }

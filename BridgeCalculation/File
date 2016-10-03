@@ -2,8 +2,12 @@ I can't use variables that haven't been instantiated inside of variables like di
 I can do this if I declare is lazily but I haven't figured it out fully'
 
 ToDo:
-HCP > 33
-HCP < 20
-IMPs
+*calculate HCP > 33
+*Don't display HCP < 20
+*IMPs
 
-If negative value when I subtrack expected and what I got then I give points to defense.  Otherwise give points to offense
+Bugs:
+selecting 9 trump on NT gives odd imps
+selecting no fit for a minor trump suit in a game gives you less imps than if you have 8 trump
+
+If negative value when I subtract expected from game score then I give points to defense.  Otherwise give points to offense

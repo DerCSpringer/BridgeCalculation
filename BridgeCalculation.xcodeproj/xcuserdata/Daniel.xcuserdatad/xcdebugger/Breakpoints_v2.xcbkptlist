@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497219245.107594"
+            timestampString = "497226299.432367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "calculateEstimatedScoreWithNumberOfTrump(_:trumpSuit:highCardPoints:isVulnerable:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497219245.107594"
+            timestampString = "497226299.432367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "calculateScoreWithLevel(_:numberOfTricks:trumpSuit:isVulnerable:doubled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497219245.107594"
+            timestampString = "497226299.432367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "calculateScoreWithLevel(_:numberOfTricks:trumpSuit:isVulnerable:doubled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497219245.107594"
+            timestampString = "497226299.432367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "calculateScoreWithLevel(_:numberOfTricks:trumpSuit:isVulnerable:doubled:)"
             landmarkType = "5">
          </BreakpointContent>

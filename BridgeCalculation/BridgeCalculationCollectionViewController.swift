@@ -192,16 +192,33 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     }
     
     func updateScore() {
-        score.text = nil
+        score.text = "Score: "
         imps.text = nil
-        if let aScore = calculator.calculateEstimatedScoreWithNumberOfTrump(CellTitle.numberOfTrumpSelected, trumpSuit: CellTitle.trumpSuit, highCardPoints: CellTitle.highCardPoints, isVulnerable: CellTitle.isVulnerable) {
-            score.text = String(aScore)
+        var expectedScore : Int?
+        var actualScore : Int?
+        if let eScore = calculator.calculateEstimatedScoreWithNumberOfTrump(CellTitle.numberOfTrumpSelected, trumpSuit: CellTitle.trumpSuit, highCardPoints: CellTitle.highCardPoints, isVulnerable: CellTitle.isVulnerable) {
+            expectedScore = eScore
         }
                 
-        if let impScore = calculator.calculateScoreWithLevel(CellTitle.level, numberOfTricks: CellTitle.wonOrLostTricks, trumpSuit: CellTitle.trumpSuit, isVulnerable: CellTitle.isVulnerable, doubled: CellTitle.doubleOrNot) {
-            imps.text = String(impScore)
+        if let aScore = calculator.calculateScoreWithLevel(CellTitle.level, numberOfTricks: CellTitle.wonOrLostTricks, trumpSuit: CellTitle.trumpSuit, isVulnerable: CellTitle.isVulnerable, doubled: CellTitle.doubleOrNot) {
+            actualScore = aScore
+            score.text = "Score: " + String(aScore)
         }
+        if expectedScore != nil && actualScore != nil {
+            let impScore = actualScore! - expectedScore!
+            if impScore < 0 {
+                imps.text = "Defense: " + String(calculator.calculateImps(-1 * impScore)!) + " imps"
+            }
+            else {
+                imps.text = "Offense: " + String(calculator.calculateImps(impScore)!) + " imps"
+
+            }
+        }
+        
     }
+    
+    
+    
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

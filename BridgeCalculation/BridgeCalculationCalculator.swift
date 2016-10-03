@@ -28,13 +28,17 @@ class BridgeCalculationCalculator: NSObject {
         [910, 1310, 1010, 1460, 1110, 1610, 840, 1240, 940, 1390, 1040, 1540, 820, 1170]
     ]
     
+    private let imps=[20, 50, 90, 130, 170, 220, 270, 320, 370, 430, 500, 600, 750, 900, 1100, 1300, 1500, 1750, 2000, 2250, 2500, 3000, 3500, 4000, 100000]
+    
     //Ignore numberOfTrump if in NT
     //Fit is determined by # of trump
     
     
     func calculateEstimatedScoreWithNumberOfTrump(numberOfTrump : String?, trumpSuit : String?, highCardPoints : Int?, isVulnerable : Bool?) -> Int? {
+        if numberOfTrump == nil || trumpSuit == nil || highCardPoints == nil || isVulnerable == nil {return nil}
         
         columnPosition = 13
+        var pointsAfter33HCP = 0
         var trumpType : String?
         if (trumpSuit != nil && (trumpSuit == "♠️" || trumpSuit == "♥️")) {trumpType = "Major"}
         else if (trumpSuit != nil && (trumpSuit == "♦️" || trumpSuit == "♣️")) { trumpType = "Minor"}
@@ -49,9 +53,13 @@ class BridgeCalculationCalculator: NSObject {
         //After the fit is figured we then go to the number in the fit.  This narrows our range.  After that we figure out vulnerability to give us a specific column number.  We figure the row number by using the total number of high card points
 
         //Todo: Only works to 33 HCP
-        if highCardPoints != nil {
-            if highCardPoints! > 33 {return 0}
-            else {rowPosition = highCardPoints! - 20}
+        if var hcp = highCardPoints {
+            if hcp > 33 {
+                pointsAfter33HCP = hcp - 33
+                hcp = 33
+            }
+                
+            else {rowPosition = hcp - 20}
         }
         
         if (trumpType != nil && trumpType == "Major") { columnPosition = 5 }
@@ -72,8 +80,11 @@ class BridgeCalculationCalculator: NSObject {
                 columnPosition -= 1
             }
         }
+        if isVulnerable! {pointsAfter33HCP *= 150}
+        else {pointsAfter33HCP *= 100}
+        
         if (isVulnerable != nil && trumpSuit != nil && highCardPoints != nil && isVulnerable != nil) {
-            return compensationTable[rowPosition!][columnPosition]
+            return compensationTable[rowPosition!][columnPosition] + pointsAfter33HCP
         }
         else { return nil }
     }
@@ -159,6 +170,14 @@ class BridgeCalculationCalculator: NSObject {
         
         return result
         
+    }
+    
+    func calculateImps(score : Int?) -> Int?
+    {
+        for expectedScore in imps {
+            if score < expectedScore {return imps.indexOf(expectedScore)}
+        }
+        return nil
     }
 
 }

@@ -11,7 +11,7 @@ import Foundation
 class CellTitle {
     
     private static var numberOfTricks = 14
-    private static var numberOfPoints = 40
+    //private static var numberOfPoints = 20
     static let numberOfSections = cellTitleFromSection.count
     
     //MARK: Model variables from controller
@@ -48,7 +48,7 @@ class CellTitle {
         case "Trump Suit" : return 5
         case "Number of tricks" : return 14
         case "Double?" : return 3
-        case "High card points" : return 41
+        case "High card points" : return 21
         case "Number of trump" : return 4
         case "Vulnerable?" : return 2
 
@@ -84,8 +84,8 @@ class CellTitle {
             case "Level" : return String(indexPath.row + 1)
             case "Trump Suit" : return suit[indexPath.row]!
             case "Double?" : return risk[indexPath.row]!
-            case "Number of tricks" : return (String(indexPath.row - numberOfTricks))
-            case "High card points" : return String(indexPath.row)
+            case "Number of tricks" : return (String(indexPath.row - numberOfTricks + 1))
+            case "High card points" : return String(indexPath.row + 20)
             case "Number of trump" : return numberOfTrump[indexPath.row]
             case "Vulnerable?" : return vulnerable[indexPath.row]
             default : return "Error"

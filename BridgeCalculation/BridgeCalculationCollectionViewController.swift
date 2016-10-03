@@ -18,6 +18,7 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     //The array is optional
     private var selectedButtons = [BridgeCalculationCollectionViewCell]?()
     private var selectedButtonPath = [NSIndexPath]?()
+    private var calculator = BridgeCalculationCalculator()
     
     //If I do [BridgeCalculationCollectionViewCell?]?() then all things in the array are also optional not just the array
     
@@ -27,7 +28,8 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
         2: "Number of tricks",
         3: "Double?",
         4: "High card points",
-        5: "Number of trump"
+        5: "Number of trump",
+        6: "Vulnerable?"
     
     ]
     
@@ -38,7 +40,8 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
         3: UIColor.init(red: 0.0, green: 1.0, blue: 0.5, alpha: 0.5),
         4: UIColor.init(red: 0.5, green: 0.5, blue: 0.0, alpha: 0.5),
         5: UIColor.init(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.5),
-        6: UIColor.init(red: 1.0, green: 0.5, blue: 1.0, alpha: 0.5)
+        6: UIColor.init(red: 1.0, green: 0.5, blue: 1.0, alpha: 0.5),
+        7: UIColor.init(red: 1.0, green: 0.5, blue: 0.5, alpha: 0.5)
 
     ]
 
@@ -74,11 +77,9 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
         atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-            //1
             switch kind {
-                //2
+                
             case UICollectionElementKindSectionHeader:
-                //3
                 let headerView =
                 collectionView.dequeueReusableSupplementaryViewOfKind(kind,
                     withReuseIdentifier: "BridgeCalculationSectionHeader",
@@ -86,8 +87,8 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
                     as! BridgeCalculationCollectionReusableView
                 headerView.sectionTitle.text = cellTitleFromSection[indexPath.section]
                 return headerView
+                
             default:
-                //4
                 assert(false, "Unexpected element kind")
             }
     }
@@ -103,34 +104,26 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
         if let numberOfItems = cellTitleFromSection[section] {
            return CellTitle.numberOfCellsInSection(numberOfItems)
         }
-        else {
-            return 0
-        }
+        else {return 0}
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BridgeCalculationCollectionViewCell
         cell.title.text = CellTitle.titleForCellAtIndexPath(indexPath)
         if let buttonPath = selectedButtonPath {
-            if (buttonPath.contains(indexPath)) { //cell.currentlySelected == true {
+            if (buttonPath.contains(indexPath)) {
                 cell.backgroundColor = UIColor.lightGrayColor()
             }
-            else {
-                cell.backgroundColor = cellColor[indexPath.section]
-                
-            }
-
+            else {cell.backgroundColor = cellColor[indexPath.section]}
         }
-        else {
-            cell.backgroundColor = cellColor[indexPath.section]
-            
-        }
+        else {cell.backgroundColor = cellColor[indexPath.section]}
         return cell
     }
 
     // MARK: UICollectionViewDelegate
     
     
+    //Probably not needed anymore
     //If I selected an object then unselect it.  If I select a new object then deselect the old and and select the new one.  If I select an object then just select it.
     override func collectionView(collectionView: UICollectionView,
         shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -140,31 +133,48 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
             return true
     }
     
-    
-    //Add functionality to only select one button per section
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var removedFlag = false
+        override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? BridgeCalculationCollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            CellTitle.level = indexPath.row
-            collectionView.reloadSections(NSIndexSet.init(index: 2))
-        case 1: CellTitle.trumpSuit = cell.title.text!
-        case 2: CellTitle.wonOrLostTricks = Int(cell.title.text!)
-        default : break
-            
+            switch indexPath.section {
+            case 0://Deselect any buttons in number of tricks if you change the level
+                CellTitle.level = indexPath.row + 1
+                CellTitle.wonOrLostTricks = nil
+                if let selectedButtonPaths = selectedButtonPath {
+                    for index in selectedButtonPaths {
+                        if index.section == 2 {
+                            selectedButtonPath!.removeAtIndex(selectedButtonPath!.indexOf(index)!)
+                        }
+                    }
+                }
+                collectionView.reloadSections(NSIndexSet.init(index: 2))
+            case 1: CellTitle.trumpSuit = cell.title.text!
+            case 2: CellTitle.wonOrLostTricks = Int(cell.title.text!)
+            case 3 : CellTitle.doubleOrNot = indexPath.row
+            case 4: CellTitle.highCardPoints = Int(cell.title.text!)
+            case 5: CellTitle.numberOfTrumpSelected = cell.title.text!
+            case 6: CellTitle.isVulnerable = !Bool(indexPath.row)
+            default : break
+                
+            }
         }
-        }
-//        if indexPath.section == 0 {
-//            CellTitle.level = indexPath.row
-//            collectionView.reloadSections(NSIndexSet.init(index: 2))
-//        }
+        
+        checkButtonSelectionStateAtIndex(indexPath)
+        updateScore()
+        collectionView.reloadItemsAtIndexPaths([indexPath])
+    }
+    
+    
+    
+    //Only allows for selection of one button per section
+    func checkButtonSelectionStateAtIndex(indexPath : NSIndexPath)
+    {
+        var removedFlag = false
         if selectedButtonPath != nil {//Check for nil optional
             for index in selectedButtonPath! {//search to see if a button is already selected in section.  If so then unselect that button.
                 if indexPath.section == index.section {
                     selectedButtonPath!.removeAtIndex(selectedButtonPath!.indexOf(index)!)
                     removedFlag = true
-                    collectionView.reloadItemsAtIndexPaths([index])
+                    self.collectionView?.reloadItemsAtIndexPaths([index])
                 }
             }
             //Need to compare all index pathes to see if any match the section number.  If so remove that and add this one
@@ -179,9 +189,18 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
             selectedButtonPath = [indexPath]
         }
         
-        
-       // }
-            collectionView.reloadItemsAtIndexPaths([indexPath])
+    }
+    
+    func updateScore() {
+        score.text = nil
+        imps.text = nil
+        if let aScore = calculator.calculateEstimatedScoreWithNumberOfTrump(CellTitle.numberOfTrumpSelected, trumpSuit: CellTitle.trumpSuit, highCardPoints: CellTitle.highCardPoints, isVulnerable: CellTitle.isVulnerable) {
+            score.text = String(aScore)
+        }
+                
+        if let impScore = calculator.calculateScoreWithLevel(CellTitle.level, numberOfTricks: CellTitle.wonOrLostTricks, trumpSuit: CellTitle.trumpSuit, isVulnerable: CellTitle.isVulnerable, doubled: CellTitle.doubleOrNot) {
+            imps.text = String(impScore)
+        }
     }
 
     /*
@@ -221,7 +240,7 @@ extension BridgeCalculationCollectionViewController : UICollectionViewDelegateFl
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize { //Return size of cell
-            if (indexPath.section == 3) {
+            if (indexPath.section == 3) { //Section with double
                 return CGSizeMake(100.0, 50.0)
             }
 

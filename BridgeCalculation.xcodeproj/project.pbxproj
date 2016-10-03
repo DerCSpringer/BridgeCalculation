@@ -15,6 +15,7 @@
 		654CB3241D777FC400F1759E /* BridgeCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CB3231D777FC400F1759E /* BridgeCalculationTests.swift */; };
 		654CB32F1D777FC400F1759E /* BridgeCalculationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CB32E1D777FC400F1759E /* BridgeCalculationUITests.swift */; };
 		654CB33D1D779FB600F1759E /* File in Resources */ = {isa = PBXBuildFile; fileRef = 654CB33C1D779FB600F1759E /* File */; };
+		656F9D9F1D9076A600777EE1 /* BridgeCalculationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F9D9E1D9076A600777EE1 /* BridgeCalculationCalculator.swift */; };
 		65832FA61D7E20AC005530DE /* CellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65832FA51D7E20AC005530DE /* CellTitle.swift */; };
 		65833FDA1D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65833FD91D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift */; };
 		65833FDC1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65833FDB1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift */; };
@@ -53,6 +54,7 @@
 		654CB32E1D777FC400F1759E /* BridgeCalculationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeCalculationUITests.swift; sourceTree = "<group>"; };
 		654CB3301D777FC400F1759E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		654CB33C1D779FB600F1759E /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = File; path = BridgeCalculation/File; sourceTree = "<group>"; };
+		656F9D9E1D9076A600777EE1 /* BridgeCalculationCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCalculationCalculator.swift; sourceTree = "<group>"; };
 		65832FA51D7E20AC005530DE /* CellTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTitle.swift; sourceTree = "<group>"; };
 		65833FD91D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCalculationCollectionViewController.swift; sourceTree = "<group>"; };
 		65833FDB1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCalculationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				654CB30E1D777FC400F1759E /* AppDelegate.swift */,
 				654CB3101D777FC400F1759E /* ViewController.swift */,
 				65832FA51D7E20AC005530DE /* CellTitle.swift */,
+				656F9D9E1D9076A600777EE1 /* BridgeCalculationCalculator.swift */,
 				65F4BB8A1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift */,
 				65833FD91D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift */,
 				65833FDB1D7E1EDD00815524 /* BridgeCalculationCollectionViewCell.swift */,
@@ -274,6 +277,7 @@
 			files = (
 				654CB3111D777FC400F1759E /* ViewController.swift in Sources */,
 				654CB30F1D777FC400F1759E /* AppDelegate.swift in Sources */,
+				656F9D9F1D9076A600777EE1 /* BridgeCalculationCalculator.swift in Sources */,
 				65F4BB8B1D80B86B001AAFFB /* BridgeCalculationCollectionReusableView.swift in Sources */,
 				65833FDA1D7E1E9100815524 /* BridgeCalculationCollectionViewController.swift in Sources */,
 				65832FA61D7E20AC005530DE /* CellTitle.swift in Sources */,

@@ -1,2 +1,9 @@
 I can't use variables that haven't been instantiated inside of variables like dictionarys
 I can do this if I declare is lazily but I haven't figured it out fully'
+
+ToDo:
+HCP > 33
+HCP < 20
+IMPs
+
+If negative value when I subtrack expected and what I got then I give points to defense.  Otherwise give points to offense

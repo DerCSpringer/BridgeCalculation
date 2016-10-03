@@ -22,11 +22,12 @@ class CellTitle {
     }
     static var trumpSuit : String?
     static var wonOrLostTricks : Int?
-    static var doubleOrNot : String?
-    static var highCardPoitns : Int?
-    static var numberOfTrumpSelected : Int?
+    static var doubleOrNot : Int?
+    static var highCardPoints : Int?
+    static var numberOfTrumpSelected : String?
     static var imps : Int?
     static var points : Int?
+    static var isVulnerable : Bool?
     
     //MARK: types in collectionView
     
@@ -36,7 +37,8 @@ class CellTitle {
         2: "Number of tricks",
         3: "Double?",
         4: "High card points",
-        5: "Number of trump"
+        5: "Number of trump",
+        6: "Vulnerable?"
         
     ]
     
@@ -48,6 +50,8 @@ class CellTitle {
         case "Double?" : return 3
         case "High card points" : return 41
         case "Number of trump" : return 4
+        case "Vulnerable?" : return 2
+
         default : return 1
         }
     }
@@ -69,6 +73,9 @@ class CellTitle {
     private static let numberOfTrump: Array<String> =
     ["<8","8","9","10+"]
     
+    private static let vulnerable: Array<String> =
+    ["Yes","No"]
+    
     
     
     static func titleForCellAtIndexPath(indexPath: NSIndexPath) -> String {
@@ -80,6 +87,7 @@ class CellTitle {
             case "Number of tricks" : return (String(indexPath.row - numberOfTricks))
             case "High card points" : return String(indexPath.row)
             case "Number of trump" : return numberOfTrump[indexPath.row]
+            case "Vulnerable?" : return vulnerable[indexPath.row]
             default : return "Error"
             }
         }

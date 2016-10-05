@@ -42,17 +42,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
 
     ]
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
     
     override func collectionView(collectionView: UICollectionView,
@@ -103,6 +92,9 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     
         override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? BridgeCalculationCollectionViewCell {
+            if indexPath.section < 6 {
+                collectionView.scrollToItemAtIndexPath(NSIndexPath.init(forRow: 0, inSection: indexPath.section + 1), atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+            }
             switch indexPath.section {
             case 0://Deselect any buttons in number of tricks if you change the level
                 CellTitle.level = indexPath.row + 1
@@ -190,7 +182,7 @@ extension BridgeCalculationCollectionViewController : UICollectionViewDelegateFl
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize { //Return size of cell
-            if (indexPath.section == 3) { //Section with double
+            if (indexPath.section == 3) { //Section with double selection(need bigger cells)
                 return CGSizeMake(100.0, 50.0)
             }
 

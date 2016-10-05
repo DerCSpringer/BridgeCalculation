@@ -77,9 +77,10 @@ class BridgeCalculationCalculator: NSObject {
         }
         var trumpType : String?
         var penalityPerTrick = 0
-        var bonus = 0
+        var gameBonus = 0
         var result = 0
         var pointsForTricks = 0
+        var doubledBonus = 0
         
         if trumpSuit == "♠️" || trumpSuit == "♥️" {trumpType = "Major"}
         else if trumpSuit == "♦️" || trumpSuit == "♣️" { trumpType = "Minor"}
@@ -87,9 +88,12 @@ class BridgeCalculationCalculator: NSObject {
         
         
         if numberOfTricks >= 0 {
-            bonus = calculateGameBonus(level!, isVulnerable: isVulnerable!, trumpType: trumpType!)
+            gameBonus = calculateGameBonus(level!, isVulnerable: isVulnerable!, trumpType: trumpType!)
             pointsForTricks = calculatePointsForTricks(trumpType!, numberOfTricks: numberOfTricks!, level: level!)
-            
+            if doubled > 0 {
+                /* bonus for double or redouble*/ doubledBonus += (doubled! * 50)
+                /* bonus for double or redouble for tricks*/ + (((2 * doubled!) - 1) * pointsForTricks)
+                /* bonus for double or redouble for overtricks*/ + (numberOfTricks! * (100 + 100 * Int(isVulnerable!)) * doubled!)}
         }
         
         //Penalty
@@ -99,11 +103,8 @@ class BridgeCalculationCalculator: NSObject {
         
         
         //Double bonus
-        if(doubled > 0 && numberOfTricks >= 0) {
-            /* bonus for double or redouble*/ bonus += (doubled! * 50)
-            /* bonus for double or redouble for tricks*/ + (((2 * doubled!) - 1) * pointsForTricks)
-            /* bonus for double or redouble for overtricks*/ + (numberOfTricks! * (100 + 100 * Int(isVulnerable!)) * doubled!)}
-        result = bonus + pointsForTricks - penalityPerTrick
+        
+        result = gameBonus + pointsForTricks + doubledBonus - penalityPerTrick
         return result
     }
     

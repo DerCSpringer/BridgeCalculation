@@ -17,7 +17,5 @@ class BridgeCalculationCollectionViewCell: UICollectionViewCell {
 //        }
 //        
 //    }
-    var currentlySelected : Bool?
-
     
 }

@@ -14,7 +14,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     @IBOutlet weak var score: UITextField!
     @IBOutlet weak var imps: UITextField!
     
-    private var selectedButtons = [BridgeCalculationCollectionViewCell]?()
     private var selectedButtonPath = [NSIndexPath]?()
     private var calculator = BridgeCalculationCalculator()
     
@@ -118,7 +117,7 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
                 collectionView.reloadSections(NSIndexSet.init(index: 2))
             case 1: CellTitle.trumpSuit = cell.title.text!
             case 2: CellTitle.wonOrLostTricks = Int(cell.title.text!)
-            case 3 : CellTitle.doubleOrNot = indexPath.row
+            case 3: CellTitle.doubleOrNot = indexPath.row
             case 4: CellTitle.highCardPoints = Int(cell.title.text!)
             case 5: CellTitle.numberOfTrumpSelected = cell.title.text!
             case 6: CellTitle.isVulnerable = !Bool(indexPath.row)

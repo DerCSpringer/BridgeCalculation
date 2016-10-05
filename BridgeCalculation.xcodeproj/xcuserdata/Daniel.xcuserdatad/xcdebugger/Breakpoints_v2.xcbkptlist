@@ -111,8 +111,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "BridgeCalculationCollectionViewController"
-            landmarkType = "3">
+            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,43 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497392124.739993"
+            timestampString = "497393330.905416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "calculateScoreWithLevel(_:numberOfTricks:trumpSuit:isVulnerable:doubled:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497392124.739993"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "calculateScoreWithLevel(_:numberOfTricks:trumpSuit:isVulnerable:doubled:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BridgeCalculation/BridgeCalculationCalculator.swift"
-            timestampString = "497392124.739993"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "calculateScoreWithLevel(_:numberOfTricks:trumpSuit:isVulnerable:doubled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -225,6 +193,178 @@
             endingLineNumber = "177"
             landmarkName = "updateScore()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BridgeCalculation/BridgeCalculationCollectionReusableView.swift"
+            timestampString = "497393593.374945"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "BridgeCalculationCollectionReusableView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionReusableView.sectionTitle.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionReusableView.swift"
+                  timestampString = "497393682.405815"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionReusableView.sectionTitle.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionReusableView.swift"
+                  timestampString = "497393682.406241"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionReusableView.init (BridgeCalculation.BridgeCalculationCollectionReusableView.Type)(frame : __C.CGRect) -&gt; BridgeCalculation.BridgeCalculationCollectionReusableView"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionReusableView.swift"
+                  timestampString = "497393682.406671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionReusableView.init (BridgeCalculation.BridgeCalculationCollectionReusableView.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BridgeCalculation.BridgeCalculationCollectionReusableView&gt;"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionReusableView.swift"
+                  timestampString = "497393682.40709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BridgeCalculation/BridgeCalculationCollectionViewCell.swift"
+            timestampString = "497393597.961693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "BridgeCalculationCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BridgeCalculation/BridgeCalculationCollectionViewCell.swift"
+            timestampString = "497393598.929624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "BridgeCalculationCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionViewCell.title.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionViewCell.swift"
+                  timestampString = "497393606.91466"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionViewCell.title.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionViewCell.swift"
+                  timestampString = "497393606.915271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionViewCell.init (BridgeCalculation.BridgeCalculationCollectionViewCell.Type)(frame : __C.CGRect) -&gt; BridgeCalculation.BridgeCalculationCollectionViewCell"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionViewCell.swift"
+                  timestampString = "497393606.91559"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeCalculation.BridgeCalculationCollectionViewCell.init (BridgeCalculation.BridgeCalculationCollectionViewCell.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BridgeCalculation.BridgeCalculationCollectionViewCell&gt;"
+                  moduleName = "BridgeCalculation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Daniel/untitled%20folder/BridgeCalculation/BridgeCalculation/BridgeCalculationCollectionViewCell.swift"
+                  timestampString = "497393606.915822"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

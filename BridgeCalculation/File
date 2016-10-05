@@ -7,7 +7,7 @@ ToDo:
 *IMPs
 
 Bugs:
-selecting 9 trump on NT gives odd imps
-selecting no fit for a minor trump suit in a game gives you less imps than if you have 8 trump
+*selecting 9 trump on NT gives odd imps
+*selecting no fit for a minor trump suit in a game gives you less imps than if you have 8 trump
 
 If negative value when I subtract expected from game score then I give points to defense.  Otherwise give points to offense

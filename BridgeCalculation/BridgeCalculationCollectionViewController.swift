@@ -14,8 +14,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     @IBOutlet weak var score: UITextField!
     @IBOutlet weak var imps: UITextField!
     
-    
-    //The array is optional
     private var selectedButtons = [BridgeCalculationCollectionViewCell]?()
     private var selectedButtonPath = [NSIndexPath]?()
     private var calculator = BridgeCalculationCalculator()
@@ -45,22 +43,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
 
     ]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     /*
     // MARK: - Navigation
@@ -94,13 +76,11 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return CellTitle.numberOfSections
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         if let numberOfItems = cellTitleFromSection[section] {
            return CellTitle.numberOfCellsInSection(numberOfItems)
         }
@@ -121,17 +101,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
-    
-    
-    //Probably not needed anymore
-    //If I selected an object then unselect it.  If I select a new object then deselect the old and and select the new one.  If I select an object then just select it.
-    override func collectionView(collectionView: UICollectionView,
-        shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-//            if let selectedButton = selectedButtons?[indexPath.section] {
-//                collectionView.deselectItemAtIndexPath(collectionView.indexPathForCell(selectedButton)!, animated: true)
-//            }
-            return true
-    }
     
         override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? BridgeCalculationCollectionViewCell {
@@ -216,41 +185,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
         }
         
     }
-    
-    
-    
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
-    
-
-
 }
 
 extension BridgeCalculationCollectionViewController : UICollectionViewDelegateFlowLayout {

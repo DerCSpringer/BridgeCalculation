@@ -11,7 +11,6 @@ import Foundation
 class CellTitle {
     
     private static var numberOfTricks = 14
-    //private static var numberOfPoints = 20
     static let numberOfSections = cellTitleFromSection.count
     
     //MARK: Model variables from controller
@@ -51,7 +50,6 @@ class CellTitle {
         case "High card points" : return 21
         case "Number of trump" : return 4
         case "Vulnerable?" : return 2
-
         default : return 1
         }
     }

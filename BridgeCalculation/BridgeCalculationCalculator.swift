@@ -34,25 +34,22 @@ class BridgeCalculationCalculator: NSObject {
     //Fit is determined by # of trump
     
     
+    
+    //There are 13 columns in the above table.  Each number represents a score from this Compensation Table http://www.compensationtable.com/printable.php
+    //First we figure out if we are in a major/minor/ or no fit
+    //This gives us a range of columns for each type.  We always start out at the rightmost column in a type
+    //After the fit is figured we then go to the number in the fit.  This narrows our range.  After that we figure out vulnerability to give us a specific column number.  We figure the row number by using the total number of high card points
     func calculateEstimatedScoreWithNumberOfTrump(numberOfTrump : String?, trumpSuit : String?, highCardPoints : Int?, isVulnerable : Bool?) -> Int? {
         if numberOfTrump == nil || trumpSuit == nil || highCardPoints == nil || isVulnerable == nil {return nil}
         
         columnPosition = 13
         var pointsAfter33HCP = 0
         var trumpType : String?
-        if (trumpSuit != nil && (trumpSuit == "♠️" || trumpSuit == "♥️")) {trumpType = "Major"}
-        else if (trumpSuit != nil && (trumpSuit == "♦️" || trumpSuit == "♣️")) { trumpType = "Minor"}
-        else if ((trumpSuit != nil && (trumpSuit == "NT"))) { trumpType = "No Fit" }
+        if trumpSuit == "♠️" || trumpSuit == "♥️" {trumpType = "Major"}
+        else if trumpSuit == "♦️" || trumpSuit == "♣️" { trumpType = "Minor"}
+        else if trumpSuit == "NT" { trumpType = "NT" }
         
-        
-        
-        
-        //There are 13 columns in the above table.  Each number represents a score from this Compensation Table http://www.compensationtable.com/printable.php
-        //First we figure out if we are in a major/minor/ or no fit
-        //This gives us a range of columns for each type.  We always start out at the rightmost column in a type
-        //After the fit is figured we then go to the number in the fit.  This narrows our range.  After that we figure out vulnerability to give us a specific column number.  We figure the row number by using the total number of high card points
 
-        //Todo: Only works to 33 HCP
         if var hcp = highCardPoints {
             if hcp > 33 {
                 pointsAfter33HCP = hcp - 33
@@ -62,11 +59,11 @@ class BridgeCalculationCalculator: NSObject {
             else {rowPosition = hcp - 20}
         }
         
-        if (trumpType != nil && trumpType == "Major") { columnPosition = 5 }
-        else if (trumpType != nil && trumpType == "Minor") { columnPosition = 11 }
-        else if (trumpType != nil && trumpType == "NT") { columnPosition = 13 }
+        if trumpType == "Major" { columnPosition = 5 }
+        else if trumpType == "Minor" { columnPosition = 11 }
+        else if trumpType == "NT" { columnPosition = 13 }
         
-        if (numberOfTrump != nil && trumpType != "NT") {
+        if trumpType != "NT" {
             switch numberOfTrump! {
             case "<8" : columnPosition = 13
             case "8" : columnPosition -= 4
@@ -75,45 +72,28 @@ class BridgeCalculationCalculator: NSObject {
             }
         }
         
-        if (isVulnerable != nil && trumpSuit != nil && highCardPoints != nil && isVulnerable != nil) {
-            if isVulnerable == false {
-                columnPosition -= 1
-            }
-        }
+        if !isVulnerable! {columnPosition -= 1}
         if isVulnerable! {pointsAfter33HCP *= 150}
         else {pointsAfter33HCP *= 100}
         
-        if (isVulnerable != nil && trumpSuit != nil && highCardPoints != nil && isVulnerable != nil) {
-            return compensationTable[rowPosition!][columnPosition] + pointsAfter33HCP
-        }
-        else { return nil }
+        return compensationTable[rowPosition!][columnPosition] + pointsAfter33HCP
     }
     
     
-    //Works for games and part scores
-    //ToDo: Imps
-    
     //Double and redoubl just does a bounus + double the number of tricks you made + and over tricks
-   
     func calculateScoreWithLevel(level : Int?, numberOfTricks : Int?, trumpSuit : String?, isVulnerable : Bool?, doubled : Int?) -> Int? {
         if (level == nil || numberOfTricks == nil || trumpSuit == nil || isVulnerable == nil || doubled == nil) {
             return nil
         }
-        
-        
-        
         var trumpType : String?
         var penalityPerTrick = 0
-        //var pointsPerTrick : Int?
         var bonus = 0
-        var doubleBonus = 0
-        //let reDoubleBonus = 100
         var result = 0
         var pointsForTricks = 0
         
-        if (trumpSuit != nil && (trumpSuit == "♠️" || trumpSuit == "♥️")) {trumpType = "Major"}
-        else if (trumpSuit != nil && (trumpSuit == "♦️" || trumpSuit == "♣️")) { trumpType = "Minor"}
-        else if ((trumpSuit != nil && (trumpSuit == "NT"))) { trumpType = "NT" }
+        if trumpSuit == "♠️" || trumpSuit == "♥️" {trumpType = "Major"}
+        else if trumpSuit == "♦️" || trumpSuit == "♣️" { trumpType = "Minor"}
+        else if trumpSuit == "NT" { trumpType = "NT" }
         
         //Bonus points
         //Game bonus majors

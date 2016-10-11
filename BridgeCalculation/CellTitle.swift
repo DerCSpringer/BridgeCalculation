@@ -10,7 +10,7 @@ import Foundation
 
 class CellTitle {
     
-    private static var numberOfTricks = 14
+    fileprivate static var numberOfTricks = 14
     static let numberOfSections = cellTitleFromSection.count
     
     //MARK: Model variables from controller
@@ -26,11 +26,11 @@ class CellTitle {
     static var numberOfTrumpSelected : String?
     static var imps : Int?
     static var points : Int?
-    static var isVulnerable : Bool?
+    static var isVulnerable : Int?
     
     //MARK: types in collectionView
     
-    private static let cellTitleFromSection : Dictionary<Int,String> = [
+    fileprivate static let cellTitleFromSection : Dictionary<Int,String> = [
         0: "Level",
         1: "Trump Suit",
         2: "Number of tricks",
@@ -41,7 +41,7 @@ class CellTitle {
         
     ]
     
-    static func numberOfCellsInSection(sectionName: String) -> Int {
+    static func numberOfCellsInSection(_ sectionName: String) -> Int {
         switch sectionName {
         case "Level" : return 7
         case "Trump Suit" : return 5
@@ -54,7 +54,7 @@ class CellTitle {
         }
     }
     
-    private static let suit: Dictionary<Int,String> = [
+    fileprivate static let suit: Dictionary<Int,String> = [
         0: "♠️",
         1: "♥️",
         2: "♦️",
@@ -62,30 +62,30 @@ class CellTitle {
         4: "NT"
     ]
     
-    private static let risk: Dictionary<Int, String> = [
+    fileprivate static let risk: Dictionary<Int, String> = [
         0: "No Double",
         1: "Double",
         2: "Redouble"
     ]
     
-    private static let numberOfTrump: Array<String> =
+    fileprivate static let numberOfTrump: Array<String> =
     ["<8","8","9","10+"]
     
-    private static let vulnerable: Array<String> =
-    ["Yes","No"]
+    fileprivate static let vulnerable: Array<String> =
+    ["No","Yes"]
     
     
     
-    static func titleForCellAtIndexPath(indexPath: NSIndexPath) -> String {
-        if let cellTitle = cellTitleFromSection[indexPath.section] {
+    static func titleForCellAtIndexPath(_ indexPath: IndexPath) -> String {
+        if let cellTitle = cellTitleFromSection[(indexPath as NSIndexPath).section] {
             switch cellTitle {
-            case "Level" : return String(indexPath.row + 1)
-            case "Trump Suit" : return suit[indexPath.row]!
-            case "Double?" : return risk[indexPath.row]!
-            case "Number of tricks" : return (String(indexPath.row - numberOfTricks + 1))
-            case "High card points" : return String(indexPath.row + 20)
-            case "Number of trump" : return numberOfTrump[indexPath.row]
-            case "Vulnerable?" : return vulnerable[indexPath.row]
+            case "Level" : return String((indexPath as NSIndexPath).row + 1)
+            case "Trump Suit" : return suit[(indexPath as NSIndexPath).row]!
+            case "Double?" : return risk[(indexPath as NSIndexPath).row]!
+            case "Number of tricks" : return (String((indexPath as NSIndexPath).row - numberOfTricks + 1))
+            case "High card points" : return String((indexPath as NSIndexPath).row + 20)
+            case "Number of trump" : return numberOfTrump[(indexPath as NSIndexPath).row]
+            case "Vulnerable?" : return vulnerable[(indexPath as NSIndexPath).row]
             default : return "Error"
             }
         }

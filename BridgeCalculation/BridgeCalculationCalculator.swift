@@ -7,11 +7,40 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class BridgeCalculationCalculator: NSObject {
-    private var columnPosition = 13
-    private var rowPosition : Int?
-    private let compensationTable = [
+    fileprivate var columnPosition = 13
+    fileprivate var rowPosition : Int?
+    fileprivate let compensationTable = [
         [30, 10, 90, 70, 120, 120, -20, -40, -40, -60, -60, -70, 20, -10],
         [60, 30, 140, 130, 160, 240, 30, 0, 20, -10, 40, 40, 40, 20],
         [100, 100, 170, 200, 230, 310, 60, 50, 60, 70, 70, 100, 60, 50],
@@ -28,14 +57,18 @@ class BridgeCalculationCalculator: NSObject {
         [910, 1310, 1010, 1460, 1110, 1610, 840, 1240, 940, 1390, 1040, 1540, 820, 1170]
     ]
     
-    private let imps=[20, 50, 90, 130, 170, 220, 270, 320, 370, 430, 500, 600, 750, 900, 1100, 1300, 1500, 1750, 2000, 2250, 2500, 3000, 3500, 4000, 100000]
+    fileprivate let imps=[20, 50, 90, 130, 170, 220, 270, 320, 370, 430, 500, 600,
+        750, 900, 1100, 1300, 1500, 1750, 2000, 2250, 2500, 3000, 3500, 4000, 100000]
 
     
-    //There are 13 columns in the above table.  Each number represents a score from this Compensation Table http://www.compensationtable.com/printable.php
+    //There are 13 columns in the above table.  
+    //Each number represents a score from this Compensation Table http://www.compensationtable.com/printable.php
     //First we figure out if we are in a major/minor/ or no fit
     //This gives us a range of columns for each type.  We always start out at the rightmost column in a type
-    //After the fit is figured we then go to the number in the fit.  This narrows our range.  After that we figure out vulnerability to give us a specific column number.  We figure the row number by using the total number of high card points
-    func calculateEstimatedScoreWithNumberOfTrump(numberOfTrump : String?, trumpSuit : String?, highCardPoints : Int?, isVulnerable : Bool?) -> Int? {
+    //After the fit is figured we then go to the number in the fit.  This narrows our range.  
+    //After that we figure out vulnerability to give us a specific column number.  
+    //We figure the row number by using the total number of high card points
+    func calculateEstimatedScoreWithNumberOfTrump(_ numberOfTrump : String?, trumpSuit : String?, highCardPoints : Int?, isVulnerable : Int?) -> Int? {
         if numberOfTrump == nil || trumpSuit == nil || highCardPoints == nil || isVulnerable == nil {return nil}
         
         columnPosition = 13 //Last column in matrix and starting position
@@ -65,13 +98,13 @@ class BridgeCalculationCalculator: NSObject {
             }
         }
         
-        if !isVulnerable! {columnPosition -= 1}
-        if isVulnerable! {pointsAfter33HCP *= 150}
+        if isVulnerable! == 0 {columnPosition -= 1}
+        if isVulnerable == 1 {pointsAfter33HCP *= 150}
         else {pointsAfter33HCP *= 100}
         return compensationTable[rowPosition!][columnPosition] + pointsAfter33HCP
     }
     
-        func calculateScoreWithLevel(level : Int?, numberOfTricks : Int?, trumpSuit : String?, isVulnerable : Bool?, doubled : Int?) -> Int? {
+        func calculateScoreWithLevel(_ level : Int?, numberOfTricks : Int?, trumpSuit : String?, isVulnerable : Int?, doubled : Int?) -> Int? {
         if (level == nil || numberOfTricks == nil || trumpSuit == nil || isVulnerable == nil || doubled == nil) {
             return nil
         }
@@ -85,6 +118,7 @@ class BridgeCalculationCalculator: NSObject {
         if trumpSuit == "♠️" || trumpSuit == "♥️" {trumpType = "Major"}
         else if trumpSuit == "♦️" || trumpSuit == "♣️" { trumpType = "Minor"}
         else if trumpSuit == "NT" { trumpType = "NT" }
+            
         
         
         if numberOfTricks >= 0 {
@@ -93,7 +127,7 @@ class BridgeCalculationCalculator: NSObject {
             if doubled > 0 {
                 /* bonus for double or redouble*/ doubledBonus += (doubled! * 50)
                 /* bonus for double or redouble for tricks*/ + (((2 * doubled!) - 1) * pointsForTricks)
-                /* bonus for double or redouble for overtricks*/ + (numberOfTricks! * (100 + 100 * Int(isVulnerable!)) * doubled!)}
+                /* bonus for double or redouble for overtricks*/ + (numberOfTricks! * (100 + 100 * (isVulnerable! * doubled!)))}
         }
         
         //Penalty
@@ -108,7 +142,7 @@ class BridgeCalculationCalculator: NSObject {
         return result
     }
     
-    private func calculatePointsForTricks(trumpType : String, numberOfTricks: Int, level : Int) -> Int
+    fileprivate func calculatePointsForTricks(_ trumpType : String, numberOfTricks: Int, level : Int) -> Int
     {
         var pointsForTricks = 0
         if trumpType == "Minor" {
@@ -124,38 +158,38 @@ class BridgeCalculationCalculator: NSObject {
         return pointsForTricks
     }
     
-    private func calculateGameBonus(level : Int, isVulnerable : Bool, trumpType : String) -> Int
+    fileprivate func calculateGameBonus(_ level : Int, isVulnerable : Int, trumpType : String) -> Int
     {
         var bonus = 0
             //Major game bonus
-        if ((level == 4 || level == 5) && isVulnerable == true && trumpType != "Minor") {bonus = 500}
-        else if ((level == 4 || level == 5) && isVulnerable == false && trumpType != "Minor") {bonus = 300}
+        if ((level == 4 || level == 5) && isVulnerable == 1 && trumpType != "Minor") {bonus = 500}
+        else if ((level == 4 || level == 5) && isVulnerable == 0 && trumpType != "Minor") {bonus = 300}
             
             //Minor game bonus
-        else if (level == 5 && isVulnerable == true && trumpType == "Minor") {bonus = 500}
-        else if (level == 5 && isVulnerable == false && trumpType == "Minor") {bonus = 300}
+        else if (level == 5 && isVulnerable == 1 && trumpType == "Minor") {bonus = 500}
+        else if (level == 5 && isVulnerable == 0 && trumpType == "Minor") {bonus = 300}
             
             //Small slam bonus
-        else if (level == 6 && isVulnerable == true) {bonus = 1250}
-        else if (level == 6 && isVulnerable == false) {bonus = 800}
+        else if (level == 6 && isVulnerable == 1) {bonus = 1250}
+        else if (level == 6 && isVulnerable == 0) {bonus = 800}
             
             //Grand slam bonus
-        else if (level == 7 && isVulnerable == true) {bonus = 2000}
-        else if (level == 7 && isVulnerable == false) {bonus = 1300}
+        else if (level == 7 && isVulnerable == 1) {bonus = 2000}
+        else if (level == 7 && isVulnerable == 0) {bonus = 1300}
             
             //NT game bonus
-        else if (level == 3 && trumpType == "NT" && isVulnerable == true) {bonus = 500}
-        else if (level == 3 && trumpType == "NT" && isVulnerable == false) {bonus = 300}
+        else if (level == 3 && trumpType == "NT" && isVulnerable == 1) {bonus = 500}
+        else if (level == 3 && trumpType == "NT" && isVulnerable == 0) {bonus = 300}
             //Part score bonus
         else if (level <= 4 && bonus == 0) {bonus = 50}
         
         return bonus
     }
     
-    func calculateImps(score : Int?) -> Int?
+    func calculateImps(_ score : Int?) -> Int?
     {
         for expectedScore in imps {
-            if score < expectedScore {return imps.indexOf(expectedScore)}
+            if score < expectedScore {return imps.index(of: expectedScore)}
         }
         return nil
     }

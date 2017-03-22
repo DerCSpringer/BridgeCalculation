@@ -1,68 +1,105 @@
 {
   "images" : [
     {
+      "size" : "20x20",
       "idiom" : "iphone",
-      "size" : "29x29",
+      "filename" : "BridgeIcon40w-1.png",
       "scale" : "2x"
     },
     {
+      "size" : "20x20",
       "idiom" : "iphone",
-      "size" : "29x29",
+      "filename" : "BridgeIcon60w.png",
       "scale" : "3x"
     },
     {
+      "size" : "29x29",
       "idiom" : "iphone",
-      "size" : "40x40",
+      "filename" : "BridgeIcon58w.png",
       "scale" : "2x"
     },
     {
+      "size" : "29x29",
       "idiom" : "iphone",
-      "size" : "40x40",
+      "filename" : "BridgeIcon87w.png",
       "scale" : "3x"
     },
     {
+      "size" : "40x40",
       "idiom" : "iphone",
+      "filename" : "BridgeIcon80w.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "BridgeIcon120w.png",
+      "scale" : "3x"
+    },
+    {
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "BridgeIcon120w-1.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "BridgeIcon180w.png",
       "scale" : "3x"
     },
     {
+      "size" : "20x20",
       "idiom" : "ipad",
+      "filename" : "BridgeIcon20w.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon40w.png",
+      "scale" : "2x"
+    },
+    {
       "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon 29w.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon58w-1.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon40w-2.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon80w-1.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon76w.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon152w.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "83.5x83.5",
+      "idiom" : "ipad",
+      "filename" : "BridgeIcon167w.png",
       "scale" : "2x"
     }
   ],

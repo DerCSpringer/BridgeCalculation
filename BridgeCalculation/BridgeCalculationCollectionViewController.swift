@@ -47,7 +47,6 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath) -> UICollectionReusableView {
             switch kind {
-                
             case UICollectionElementKindSectionHeader:
                 let headerView =
                 collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -58,7 +57,7 @@ class BridgeCalculationCollectionViewController: UICollectionViewController {
                 return headerView
                 
             default:
-                assert(false, "Unexpected element kind")
+                fatalError("Unexpected element kind")
             }
     }
 

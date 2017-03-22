@@ -208,6 +208,7 @@
 				TargetAttributes = {
 					654CB30A1D777FC400F1759E = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 3K4ALTN6AF;
 						LastSwiftMigration = 0800;
 					};
 					654CB31E1D777FC400F1759E = {
@@ -427,9 +428,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3K4ALTN6AF;
 				INFOPLIST_FILE = BridgeCalculation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dcs.BridgeCalculation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dcs.BridgeCalculation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -439,9 +441,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3K4ALTN6AF;
 				INFOPLIST_FILE = BridgeCalculation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dcs.BridgeCalculation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dcs.BridgeCalculation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
